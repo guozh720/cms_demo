@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 
 import App from "App";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Loading from "components/Loading";
 
 //定义数组每一项的接口
 interface IRoute {
@@ -25,7 +26,7 @@ const routeArr:IRoute[] = [
 
 const MyRouter = () => (
     <BrowserRouter>
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div><Loading/></div>}>
             <Routes>
                 {
                     routeArr.map((item, index) => (

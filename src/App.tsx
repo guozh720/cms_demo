@@ -10,9 +10,6 @@ const App = ()=>{
             App组件
         </h2>
       <Outlet/>
-
-
-      
         </>
     );
 }
