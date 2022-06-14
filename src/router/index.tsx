@@ -1,9 +1,16 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 
 import App from "App";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-const routeArr = [
+//定义数组每一项的接口
+interface IRoute {
+    path:string,
+    component:React.FC,
+    children?:IRoute[],
+}
+
+const routeArr:IRoute[] = [
     {
         path: "/", component: App, children: [
             { path: "information", component: lazy(() => import("pages/Information")) },
