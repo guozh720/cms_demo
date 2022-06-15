@@ -3,25 +3,18 @@ import "./App.less";
 import { Layout,Menu,Breadcrumb } from "antd";
 import {TeamOutlined,EditOutlined,ReadOutlined,SelectOutlined
 ,AccountBookOutlined} from  '@ant-design/icons';
+import MyHeader from "components/MyHeader";
 // import { Outlet } from "react-router-dom";
 
 const {SubMenu} =Menu
-const {Header,Content,Sider} = Layout
+const {Content,Sider} = Layout
 
 const App = ()=>{
     return(
-        <Layout>
-        <Header className="header">
-          {/* <img src={logo} alt="" className="logo" /> */}
-          {/* <Dropdown overlay={menu} onVisibleChange={() => setVisible(!visible)} visible={visible}>
-            <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-              <img className="avatar" src="http://codesohigh.com/images/logo.png" alt="" />
-              <span>你单排吧</span>
-              <CaretDownOutlined />
-            </a>
-          </Dropdown> */}
-        </Header>
-        <Layout>
+        <Layout  className="container">
+          <MyHeader/>
+        
+        <Layout className="container_content" >
           <Sider
             theme="dark"
             style={{
@@ -44,7 +37,7 @@ const App = ()=>{
                 <Menu.Item key="3" icon={<EditOutlined />}>
                   文章编辑
                 </Menu.Item>
-                <Menu.Item key="4" icon={<ReadOutlined />}>
+                <Menu.Item key="4" icon={<ReadOutlined />} >
                   查看文章列表
                 </Menu.Item>
                 <Menu.Item key="5" icon={<SelectOutlined />}>
@@ -77,7 +70,15 @@ const App = ()=>{
              </section>
           </Content>
         </Layout>
-        {/* <Footer className="footer">Respect | Copyright © 2022 Author 你单排吧</Footer> */}
+        <footer style={{
+          textAlign:"center",
+          color:"#fff",
+          height:"70px",
+          lineHeight: "70px",
+          background:"#001529",
+        }}>
+          Respect | Copyright © 2022 Author 你单排吧
+          </footer>
       </Layout>
     );
 }
